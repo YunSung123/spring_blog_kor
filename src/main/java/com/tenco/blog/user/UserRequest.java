@@ -3,6 +3,8 @@ package com.tenco.blog.user;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 public class UserRequest {
 
     // 로그인 DTO
@@ -22,7 +24,6 @@ public class UserRequest {
             }
         }
     }
-
 
     // 회원가입 DTO
     @Data
@@ -66,13 +67,13 @@ public class UserRequest {
             }
 
         }
-
     }
 
     @Data
     public static class UpdateDTO {
 
         private String password;
+        private MultipartFile profileImage;
 
         public void validate() {
             if(password == null || password.isBlank()) {
