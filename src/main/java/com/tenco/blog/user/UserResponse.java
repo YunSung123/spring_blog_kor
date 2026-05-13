@@ -1,12 +1,16 @@
 package com.tenco.blog.user;
 
-public class UserResponse {
+import lombok.Data;
 
+public class UserResponse {
+//
 //    @Data
 //    public static class JoinDTO {
 //        private Integer id;
 //        private String username;
 //        private String email;
+//
+//
 //
 //        public JoinDTO(User user) {
 //            this.id = user.getId();

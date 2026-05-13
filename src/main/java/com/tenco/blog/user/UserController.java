@@ -41,6 +41,15 @@ public class UserController {
         return "user/login-form";
     }
 
+    // 마이페이지 요청 화면
+    @GetMapping("/user/detail")
+    public String detailPage(Model model, HttpSession session) {
+
+        User sessionUser = (User) session.getAttribute("sessionUser");
+        model.addAttribute("user", sessionUser);
+        return "user/detail";
+    }
+
     // 로그인 기능 요청
     @PostMapping("/login")
     public String loginProc(UserRequest.LoginDTO reqLoginDTO, HttpSession session) {
